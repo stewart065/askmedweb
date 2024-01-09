@@ -1,0 +1,83 @@
+@model IEnumerable<login.Models.Typesmed>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Your Title</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Your CSS styles */
+        /* ... */
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a class="btn btn-info" href="@Url.Action("homepage", "Authed")">
+                <i class="fas fa-house"></i> Home
+            </a>
+            <a class="create-link btn btn-success" asp-action="Create">Create New</a>
+        </nav>
+    </header>
+
+    <main>
+     
+    <div class="container">
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Name)</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model) {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Actions">
+                                <a class="btn btn-sm edit-link" asp-action="Edit" asp-route-id="@item.Id">
+                                    <i class="fas fa-edit"></i> Edit
+                                </a>
+                                <a class="btn btn-sm delete-link" asp-action="Delete" asp-route-id="@item.Id">
+                                    <i class="fas fa-trash-alt"></i> Delete
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+    <style>
+         body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .table th {
+            background-color: #343a40;
+            color: #fff;
+        }
+        .table-striped tbody tr:nth-of-type(odd) {
+            background-color: #f8f9fa;
+        }
+        .edit-link {
+            color: #007bff;
+        }
+        .delete-link {
+            color: #dc3545;
+        }
+    </style>
+    </main>
+
+    <script>
+        // Your JavaScript functionalities
+        // ...
+    </script>
+
+</body>
+</html>
