@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Your Title</title>
+    <title>CATEGORY</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <style>
         /* Your CSS styles */
@@ -20,6 +20,10 @@
             </a>
             <a class="create-link btn btn-success" asp-action="Create">Create New</a>
         </nav>
+
+        <title>
+            
+        </title>
     </header>
 
     <main>
@@ -33,6 +37,10 @@
                 </tr>
             </thead>
             <tbody>
+                <center>
+                    <h6 style="font-size: x-large;"> CATEGORY </h6>
+                </center>
+                <br>
                 @foreach (var item in Model) {
                     <tr>
                         <td>@Html.DisplayFor(modelItem => item.Name)</td>
