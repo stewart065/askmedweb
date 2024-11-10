@@ -5,18 +5,25 @@ using System.Threading.Tasks;
 
 namespace login.ViewModel
 {
-    public class dataofalls
-    { public int Id { get; set; }
-    public int Userid { get; set; }
-    public string storeName { get; set; }
-    public string address { get; set; }
+  
+    public class UserInventoryViewModel
+{
+    public string UserId { get; set; }
+    public string UserName { get; set; }
+    public List<InventoryViewModel> Items { get; set; }
+}
+
+
+        public class ItemsofuserViewModal
+{
+    public int Id { get; set; }
     public string Typemed { get; set; }
     public string Mendname { get; set; }
     public decimal Price { get; set; }
     public string Medis { get; set; }
-    public int Stck { get; set; }
+    public int Stock { get; set; }
     public string Statusmed { get; set; }
     public string Medicinetyp { get; set; }
-    public string Phone { get; set; }
-    }
+}
+    
 }

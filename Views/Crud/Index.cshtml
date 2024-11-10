@@ -6,61 +6,10 @@
     <meta charset="UTF-8">
     <title>CATEGORY</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet">
     <style>
-        /* Your CSS styles */
-        /* ... */
-    </style>
-</head>
-<body>
-
-    <header>
-        <nav>
-            <a class="btn btn-info" href="@Url.Action("homepage", "Authed")">
-                <i class="fas fa-house"></i> Home
-            </a>
-            <a class="create-link btn btn-success" asp-action="Create">Create New</a>
-        </nav>
-
-        <title>
-            
-        </title>
-    </header>
-
-    <main>
-     
-    <div class="container">
-        <table class="table table-striped">
-            <thead class="thead-dark">
-                <tr>
-                    <th>@Html.DisplayNameFor(model => model.Name)</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <center>
-                    <h6 style="font-size: x-large;"> CATEGORY </h6>
-                </center>
-                <br>
-                @foreach (var item in Model) {
-                    <tr>
-                        <td>@Html.DisplayFor(modelItem => item.Name)</td>
-                        <td>
-                            <div class="btn-group" role="group" aria-label="Actions">
-                                <a class="btn btn-sm edit-link" asp-action="Edit" asp-route-id="@item.Id">
-                                    <i class="fas fa-edit"></i> Edit
-                                </a>
-                                <a class="btn btn-sm delete-link" asp-action="Delete" asp-route-id="@item.Id">
-                                    <i class="fas fa-trash-alt"></i> Delete
-                                </a>
-                            </div>
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </div>
-    <style>
-         body {
+        body {
             background-color: #f8f9fa;
         }
         .container {
@@ -73,19 +22,69 @@
         .table-striped tbody tr:nth-of-type(odd) {
             background-color: #f8f9fa;
         }
-        .edit-link {
-            color: #007bff;
+        h6 {
+            text-align: center;
+            font-size: x-large;
+            margin-top: 20px;
         }
-        .delete-link {
-            color: #dc3545;
+        .table td, .table th {
+            padding: 15px;
         }
     </style>
-    </main>
+</head>
+<body>
 
-    <script>
-        // Your JavaScript functionalities
-        // ...
-    </script>
+<header>
+    <nav class="header-nav">
+        <a class="btn btn-info" href="@Url.Action("homepage", "Authed")">
+            <i class="fas fa-house"></i> Home
+        </a>
+        <a class="create-link btn btn-success" asp-action="Create">Create New</a>
+    </nav>
+</header>
+
+<main>
+    <div class="container">
+        <h6 class="text-center" style="font-size: x-large; margin-top: 20px;">GenericName</h6>
+        <br>
+        <table id="myTable" class="table table-striped table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>@Html.DisplayNameFor(model => model.Name)</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model) {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                        <td>
+                            <div class="btn-group" role="group" aria-label="Actions">
+                                <a class="btn btn-sm edit-link" asp-action="Edit" asp-route-id="@item.Id">
+                                    <i class="fas fa-edit"></i> Edit
+                                </a>
+                                @* <a class="btn btn-sm delete-link" asp-action="Delete" asp-route-id="@item.Id">
+                                    <i class="fas fa-trash-alt"></i> Delete
+                                </a> *@
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</main>
+
+<!-- Include jQuery and DataTables -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+        $('#myTable').DataTable();
+    });
+</script>
 
 </body>
 </html>

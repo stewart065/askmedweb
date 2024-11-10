@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Cors;
 
 namespace login.Controllers
 {
-    [EnableCors]
+
     [Route("api/[controller]/[action]")]
     public class PESTENGController : Controller
     {
@@ -26,42 +26,138 @@ namespace login.Controllers
 
         }
         [HttpGet]
-        public ActionResult<List<Invt>> getInvt()
+        public IActionResult GetInvt()
         {
-
-            var invs = _context.Invts.ToList();
-            var usrs = _sample.Aspnetusers.ToList();
-
-            var invtrs = (
-            from inv in invs
-            join usr in usrs
-            on inv.Userid equals usr.Id
-            where inv.Medicinetype == "Tablet"
-
-            select new dataofalls
+            try
             {
-                Id = inv.Id,
-                Userid = inv.Userid,
-                //UserName = usr.UserName,
-                storeName = usr.StName,
-                address = usr.Addres2,
-                Typemed = inv.Typemed,
-                Mendname = inv.Mendname,
-                Price = inv.Price,
-                Medis = inv.Medis,
-                Stck = inv.Stock,
-                Statusmed = inv.Statusmed,
-                Medicinetyp = inv.Medicinetype
+                var invs = _context.Invts.ToList();
+                var usrs = _sample.Aspnetusers.ToList();
 
+                var invtrs = (
+                    from inv in invs
+                    join usr in usrs
+                    on inv.Userid equals usr.Id
+                    where inv.Medicinetype == "Syrup"
+                    select new dataofalls
+                    {
+                        Id = inv.Id,
+                        Userid = inv.Userid,
+                        storeName = usr.StName,
+                        address = usr.Addres2,
+                        Typemed = inv.Typemed,
+                        Mendname = inv.Mendname,
+                        Price = inv.Price,
+                        Medis = inv.Medis,
+                        Stck = inv.Stock, // Ensure Stck matches Stock property
+                        Statusmed = inv.Statusmed,
+                        Medicinetyp = inv.Medicinetype,
+                        Phone = usr.PhoneNumber
+                    }
+                ).ToList();
+
+                return Ok(invtrs);
             }
-        ).ToList();
-            return Ok(invtrs);
+            catch (Exception ex)
+            {
+                // Log the error (consider using a logging framework)
+                // For example: _logger.LogError(ex, "An error occurred while processing your request.");
+                return StatusCode(500, "An error occurred while processing your request.");
+            }
         }
+
+        [HttpGet]
+        public IActionResult GetCapsule()
+        {
+            try
+            {
+                var invs = _context.Invts.ToList();
+                var usrs = _sample.Aspnetusers.ToList();
+
+                var caps = (
+                    from inv in invs
+                    join usr in usrs
+                    on inv.Userid equals usr.Id
+                    where inv.Medicinetype == "capsule"
+                    select new capsule
+                    {
+                        Id = inv.Id,
+                        Userid = inv.Userid,
+                        storeName = usr.StName,
+                        address = usr.Addres2,
+                        Typemed = inv.Typemed,
+                        Mendname = inv.Mendname,
+                        Price = inv.Price,
+                        Medis = inv.Medis,
+                        Stck = inv.Stock, // Ensure Stck matches Stock property
+                        Statusmed = inv.Statusmed,
+                        Medicinetyp = inv.Medicinetype,
+                        Phone = usr.PhoneNumber
+                    }
+                ).ToList();
+
+                return Ok(caps);
+            }
+            catch (Exception ex)
+            {
+                // Log the error (consider using a logging framework)
+                // For example: _logger.LogError(ex, "An error occurred while processing your request.");
+                return StatusCode(500, "An error occurred while processing your request.");
+            }
+        }
+        [HttpGet]
+        public IActionResult GetTablets()
+        {
+            try
+            {
+                var invs = _context.Invts.ToList();
+                var usrs = _sample.Aspnetusers.ToList();
+
+                var invtrs = (
+                    from inv in invs
+                    join usr in usrs
+                    on inv.Userid equals usr.Id
+                    where inv.Medicinetype == "Tablet"
+                    select new tablets
+                    {
+                        Id = inv.Id,
+                        Userid = inv.Userid,
+                        storeName = usr.StName,
+                        address = usr.Addres2,
+                        Typemed = inv.Typemed,
+                        Mendname = inv.Mendname,
+                        Price = inv.Price,
+                        Medis = inv.Medis,
+                        Stck = inv.Stock, // Ensure Stck matches Stock property
+                        Statusmed = inv.Statusmed,
+                        Medicinetyp = inv.Medicinetype,
+                        Phone = usr.PhoneNumber
+                    }
+                ).ToList();
+
+                return Ok(invtrs);
+            }
+            catch (Exception ex)
+            {
+                // Log the error (consider using a logging framework)
+                // For example: _logger.LogError(ex, "An error occurred while processing your request.");
+                return StatusCode(500, "An error occurred while processing your request.");
+            }
+        }
+
+
         [HttpGet]
         public ActionResult<List<Invt>> ayawkol()
         {
 
-           return _context.Invts.ToList();
+            return _context.Invts.ToList();
+        }
+        public ActionResult<List<Aspnetrole>> userinforoles()
+        {
+            var ussrs = _sample.Aspnetusertokens.ToList();
+
+            return Ok();
+
+
         }
 
         // public ActionResult<List<Invt>> getcapsul()

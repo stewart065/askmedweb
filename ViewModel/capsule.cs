@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace login.ViewModel
 {
-    public class dataofalls
+    public class capsule
     { public int Id { get; set; }
     public int Userid { get; set; }
     public string storeName { get; set; }

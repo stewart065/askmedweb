@@ -43,6 +43,14 @@ public class HomeController : Controller
         return View();
     }
 
+    public IActionResult display(){
+
+        if(User.Identity.IsAuthenticated){
+            return RedirectToAction("display","Authed");
+        }
+        return View();
+    }
+
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {

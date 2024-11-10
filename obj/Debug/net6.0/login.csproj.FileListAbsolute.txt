@@ -508,12 +508,12 @@ C:\Users\client stewart\OneDrive\Documents\login\obj\Debug\net6.0\login.pdb
 C:\Users\client stewart\OneDrive\Documents\login\obj\Debug\net6.0\login.genruntimeconfig.cache
 C:\Users\client stewart\OneDrive\Desktop\login\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\client stewart\OneDrive\Desktop\login\bin\Debug\net6.0\appsettings.json
+C:\Users\client stewart\OneDrive\Desktop\login\bin\Debug\net6.0\global.json
 C:\Users\client stewart\OneDrive\Desktop\login\bin\Debug\net6.0\login.staticwebassets.runtime.json
 C:\Users\client stewart\OneDrive\Desktop\login\bin\Debug\net6.0\login.exe
 C:\Users\client stewart\OneDrive\Desktop\login\bin\Debug\net6.0\login.deps.json
 C:\Users\client stewart\OneDrive\Desktop\login\bin\Debug\net6.0\login.runtimeconfig.json
 C:\Users\client stewart\OneDrive\Desktop\login\bin\Debug\net6.0\login.dll
-C:\Users\client stewart\OneDrive\Desktop\login\bin\Debug\net6.0\ref\login.dll
 C:\Users\client stewart\OneDrive\Desktop\login\bin\Debug\net6.0\login.pdb
 C:\Users\client stewart\OneDrive\Desktop\login\bin\Debug\net6.0\AutoMapper.dll
 C:\Users\client stewart\OneDrive\Desktop\login\bin\Debug\net6.0\Humanizer.dll
@@ -760,3 +760,4 @@ C:\Users\client stewart\OneDrive\Desktop\login\obj\Debug\net6.0\login.dll
 C:\Users\client stewart\OneDrive\Desktop\login\obj\Debug\net6.0\ref\login.dll
 C:\Users\client stewart\OneDrive\Desktop\login\obj\Debug\net6.0\login.pdb
 C:\Users\client stewart\OneDrive\Desktop\login\obj\Debug\net6.0\login.genruntimeconfig.cache
+C:\Users\client stewart\OneDrive\Desktop\login\bin\Debug\net6.0\ref\login.dll
