@@ -29,7 +29,7 @@ namespace login.Controllers
         {
 
             var invs = await _context.Invts.ToListAsync();
-            var usrs = await _sample.Aspnetusers.ToListAsync();
+            var usrs = await _sample.AspNetUsers.ToListAsync();
 
             var invtrs =  (
             from inv in invs

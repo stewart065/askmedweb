@@ -3,24 +3,25 @@ using System.Collections.Generic;
 
 namespace login.Entities
 {
-    public partial class Aspnetuser
+    public partial class AspNetUser
     {
-        public Aspnetuser()
+        public AspNetUser()
         {
-            Aspnetuserclaims = new HashSet<Aspnetuserclaim>();
-            Aspnetuserlogins = new HashSet<Aspnetuserlogin>();
-            Aspnetusertokens = new HashSet<Aspnetusertoken>();
-            Roles = new HashSet<Aspnetrole>();
+            AspNetUserClaims = new HashSet<AspNetUserClaim>();
+            AspNetUserLogins = new HashSet<AspNetUserLogin>();
+            AspNetUserTokens = new HashSet<AspNetUserToken>();
+            Roles = new HashSet<AspNetRole>();
         }
 
         public int Id { get; set; }
+        public string NormalizedName { get; set; } = null!;
+        public string Addres2 { get; set; } = null!;
+        public string StName { get; set; } = null!;
         public string? UserName { get; set; }
         public string? NormalizedUserName { get; set; }
         public string? Email { get; set; }
         public string? NormalizedEmail { get; set; }
         public bool EmailConfirmed { get; set; }
-        public string Addres2 { get; set; } = null!;
-        public string StName { get; set; } = null!;
         public string? PasswordHash { get; set; }
         public string? SecurityStamp { get; set; }
         public string? ConcurrencyStamp { get; set; }
@@ -31,10 +32,10 @@ namespace login.Entities
         public bool LockoutEnabled { get; set; }
         public int AccessFailedCount { get; set; }
 
-        public virtual ICollection<Aspnetuserclaim> Aspnetuserclaims { get; set; }
-        public virtual ICollection<Aspnetuserlogin> Aspnetuserlogins { get; set; }
-        public virtual ICollection<Aspnetusertoken> Aspnetusertokens { get; set; }
+        public virtual ICollection<AspNetUserClaim> AspNetUserClaims { get; set; }
+        public virtual ICollection<AspNetUserLogin> AspNetUserLogins { get; set; }
+        public virtual ICollection<AspNetUserToken> AspNetUserTokens { get; set; }
 
-        public virtual ICollection<Aspnetrole> Roles { get; set; }
+        public virtual ICollection<AspNetRole> Roles { get; set; }
     }
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "N3aXP3i+6S68xTmCJk6QoLD0b6Xij+aJevr9J8x2hMlPTSGxvZ2f45J4tpSkbE7eIh77YQM6qx5nnJMm29FW8Q==",
+  "dgSpecHash": "zUAu33E8zttkUeYUNQyDS3DSNmB+WYmOpxNSAAgI19q6qdsTrX9JHuiLdSWAGxwxY8S1O/LZ88+32YtMQ99wKg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\client stewart\\OneDrive\\Desktop\\login\\login.csproj",
+  "projectFilePath": "C:\\Users\\client stewart\\OneDrive\\Documents\\mao\\askmedweb\\login.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\client stewart\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\client stewart\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

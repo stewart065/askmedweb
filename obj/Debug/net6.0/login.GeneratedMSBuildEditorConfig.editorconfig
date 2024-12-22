@@ -8,97 +8,97 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = login
 build_property.RootNamespace = login
-build_property.ProjectDir = C:\Users\client stewart\OneDrive\Desktop\login\
+build_property.ProjectDir = C:\Users\client stewart\OneDrive\Documents\mao\askmedweb\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\client stewart\OneDrive\Desktop\login
+build_property.MSBuildProjectDirectory = C:\Users\client stewart\OneDrive\Documents\mao\askmedweb
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/client stewart/OneDrive/Desktop/login/Views/Account/DisplayPendingAndApprovedUsers.cshtml]
+[C:/Users/client stewart/OneDrive/Documents/mao/askmedweb/Views/Account/DisplayPendingAndApprovedUsers.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxEaXNwbGF5UGVuZGluZ0FuZEFwcHJvdmVkVXNlcnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/client stewart/OneDrive/Desktop/login/Views/Account/Index.cshtml]
+[C:/Users/client stewart/OneDrive/Documents/mao/askmedweb/Views/Account/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/client stewart/OneDrive/Desktop/login/Views/Account/Login.cshtml]
+[C:/Users/client stewart/OneDrive/Documents/mao/askmedweb/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/client stewart/OneDrive/Desktop/login/Views/Account/useraccountitems.cshtml]
+[C:/Users/client stewart/OneDrive/Documents/mao/askmedweb/Views/Account/useraccountitems.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFx1c2VyYWNjb3VudGl0ZW1zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/client stewart/OneDrive/Desktop/login/Views/Authed/homepage.cshtml]
+[C:/Users/client stewart/OneDrive/Documents/mao/askmedweb/Views/Authed/homepage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aGVkXGhvbWVwYWdlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/client stewart/OneDrive/Desktop/login/Views/Authed/Index.cshtml]
+[C:/Users/client stewart/OneDrive/Documents/mao/askmedweb/Views/Authed/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aGVkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/client stewart/OneDrive/Desktop/login/Views/Authed/partial/create.cshtml]
+[C:/Users/client stewart/OneDrive/Documents/mao/askmedweb/Views/Authed/partial/create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aGVkXHBhcnRpYWxcY3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/client stewart/OneDrive/Desktop/login/Views/Authed/partial/Delete.cshtml]
+[C:/Users/client stewart/OneDrive/Documents/mao/askmedweb/Views/Authed/partial/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aGVkXHBhcnRpYWxcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/client stewart/OneDrive/Desktop/login/Views/Authed/partial/update.cshtml]
+[C:/Users/client stewart/OneDrive/Documents/mao/askmedweb/Views/Authed/partial/update.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aGVkXHBhcnRpYWxcdXBkYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/client stewart/OneDrive/Desktop/login/Views/Authed/profile.cshtml]
+[C:/Users/client stewart/OneDrive/Documents/mao/askmedweb/Views/Authed/profile.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aGVkXHByb2ZpbGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/client stewart/OneDrive/Desktop/login/Views/Crud/Create.cshtml]
+[C:/Users/client stewart/OneDrive/Documents/mao/askmedweb/Views/Crud/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3J1ZFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/client stewart/OneDrive/Desktop/login/Views/Crud/Delete.cshtml]
+[C:/Users/client stewart/OneDrive/Documents/mao/askmedweb/Views/Crud/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3J1ZFxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/client stewart/OneDrive/Desktop/login/Views/Crud/Details.cshtml]
+[C:/Users/client stewart/OneDrive/Documents/mao/askmedweb/Views/Crud/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3J1ZFxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/client stewart/OneDrive/Desktop/login/Views/Crud/Edit.cshtml]
+[C:/Users/client stewart/OneDrive/Documents/mao/askmedweb/Views/Crud/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3J1ZFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/client stewart/OneDrive/Desktop/login/Views/Crud/Index.cshtml]
+[C:/Users/client stewart/OneDrive/Documents/mao/askmedweb/Views/Crud/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3J1ZFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/client stewart/OneDrive/Desktop/login/Views/Home/Index.cshtml]
+[C:/Users/client stewart/OneDrive/Documents/mao/askmedweb/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/client stewart/OneDrive/Desktop/login/Views/Home/Privacy.cshtml]
+[C:/Users/client stewart/OneDrive/Documents/mao/askmedweb/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/client stewart/OneDrive/Desktop/login/Views/Shared/Error.cshtml]
+[C:/Users/client stewart/OneDrive/Documents/mao/askmedweb/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/client stewart/OneDrive/Desktop/login/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/client stewart/OneDrive/Documents/mao/askmedweb/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/client stewart/OneDrive/Desktop/login/Views/_ViewImports.cshtml]
+[C:/Users/client stewart/OneDrive/Documents/mao/askmedweb/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/client stewart/OneDrive/Desktop/login/Views/_ViewStart.cshtml]
+[C:/Users/client stewart/OneDrive/Documents/mao/askmedweb/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/client stewart/OneDrive/Desktop/login/Views/Shared/_Layout.cshtml]
+[C:/Users/client stewart/OneDrive/Documents/mao/askmedweb/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-st8aq16s68

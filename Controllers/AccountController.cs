@@ -136,7 +136,7 @@ namespace login.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = _context.Aspnetusers.FirstOrDefault(q => q.Email == login.Email);
+                var user = _context.AspNetUsers.FirstOrDefault(q => q.Email == login.Email);
                 var appUser = _mapper.Map<ApplicationUser>(user);
 
                 if (user != null)

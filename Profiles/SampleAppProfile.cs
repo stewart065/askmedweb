@@ -12,7 +12,7 @@ namespace login.Profiles
     {
         public SampleAppProfile()
         {
-            CreateMap<Aspnetuser, ApplicationUser>();
+            CreateMap<AspNetUser, ApplicationUser>();
         }
     }
 }

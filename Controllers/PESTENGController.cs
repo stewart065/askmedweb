@@ -31,7 +31,7 @@ namespace login.Controllers
             try
             {
                 var invs = _context.Invts.ToList();
-                var usrs = _sample.Aspnetusers.ToList();
+                var usrs = _sample.AspNetUsers.ToList();
 
                 var invtrs = (
                     from inv in invs
@@ -71,7 +71,7 @@ namespace login.Controllers
             try
             {
                 var invs = _context.Invts.ToList();
-                var usrs = _sample.Aspnetusers.ToList();
+                var usrs = _sample.AspNetUsers.ToList();
 
                 var caps = (
                     from inv in invs
@@ -110,7 +110,7 @@ namespace login.Controllers
             try
             {
                 var invs = _context.Invts.ToList();
-                var usrs = _sample.Aspnetusers.ToList();
+                var usrs = _sample.AspNetUsers.ToList();
 
                 var invtrs = (
                     from inv in invs
@@ -151,9 +151,9 @@ namespace login.Controllers
 
             return _context.Invts.ToList();
         }
-        public ActionResult<List<Aspnetrole>> userinforoles()
+        public ActionResult<List<AspNetRole>> userinforoles()
         {
-            var ussrs = _sample.Aspnetusertokens.ToList();
+            var ussrs = _sample.AspNetUserLogins.ToList();
 
             return Ok();
 

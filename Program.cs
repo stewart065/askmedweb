@@ -5,26 +5,41 @@ using login.Entities;
 using login.Identity;
 using AutoMapper;
 using login.Profiles;
-using login.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using login.ViewModel;
+using login.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddDbContext<dataofmedContext>();
+// Configure Entity Framework DbContext for your application database
+builder.Services.AddDbContext<dataofmedContext>(
+    options =>
+    options.UseMySql(
+        builder.Configuration.GetConnectionString("DefaultConnection"),
+        new MySqlServerVersion(new Version(8, 0, 21)), // Update to your MySQL version
+        mySqlOptions => mySqlOptions.EnableRetryOnFailure(
+            maxRetryCount: 5,
+            maxRetryDelay: TimeSpan.FromSeconds(10),
+            errorNumbersToAdd: null
+        )
+    )
+);
+
 
 builder.Services.AddDbContext<sampleappContext>(options => 
-    options.UseMySql("server=localhost;database=sampleapp;user=root", Microsoft.EntityFrameworkCore.ServerVersion.Parse("10.4.21-mariadb")));
+    options.UseMySql("server=sql12.freesqldatabase.com;database=sql12749728;user=sql12749728;password=xaqCDkV8a4;", Microsoft.EntityFrameworkCore.ServerVersion.Parse("5.5.62-mariadb")));
 
 builder.Services.AddDbContext<ApplicationIdentityDbContext>(options =>
-    options.UseMySql("server=localhost;database=sampleapp;user=root;password=;", Microsoft.EntityFrameworkCore.ServerVersion.Parse("10.4.28-mariadb")));
+    options.UseMySql("server=sql12.freesqldatabase.com;database=sql12749728;user=sql12749728;password=xaqCDkV8a4;", Microsoft.EntityFrameworkCore.ServerVersion.Parse("5.5.62-mariadb")));
 
+// Configure Identity with custom settings
 builder.Services.AddIdentity<ApplicationUser, ApplicationRole>(option =>
 {
     option.SignIn.RequireConfirmedAccount = false;
@@ -43,11 +58,10 @@ var mapperConfig = new MapperConfiguration(cfg =>
 {
     cfg.AddProfile<SampleAppProfile>();
 });
-
 IMapper mapper = mapperConfig.CreateMapper();
-
 builder.Services.AddSingleton<IMapper>(mapper);
 
+// Add Authorization and Authentication
 builder.Services.AddAuthorization();
 builder.Services.AddAuthentication();
 
@@ -57,7 +71,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowFlutterApp",
         builder =>
         {
-             builder.WithOrigins("http://localhost:45336", "http://localhost:52252") // Replace with your Flutter app's origins
+            builder.WithOrigins("http://localhost:45336", "http://localhost:52252") // Replace with your Flutter app's origins
                    .AllowAnyHeader()
                    .AllowAnyMethod();
         });
@@ -77,13 +91,14 @@ else
     app.UseHsts();
 }
 
-// app.UseHttpsRedirection();
+app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
 
 // Enable CORS with the specified policy
 app.UseCors("AllowFlutterApp");
 
+// Enable Authentication and Authorization
 app.UseAuthentication();
 app.UseAuthorization();
 
@@ -106,6 +121,7 @@ app.Use(async (context, next) =>
     }
 });
 
+// Configure default routing
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Account}/{action=Login}/{id?}");

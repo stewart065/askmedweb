@@ -11,8 +11,8 @@ using login.Identity;
 namespace login.Migrations
 {
     [DbContext(typeof(ApplicationIdentityDbContext))]
-    [Migration("20231022065533_idnttyinit")]
-    partial class idnttyinit
+    [Migration("20241220054700_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -32,12 +32,12 @@ namespace login.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<string>("Name")
-                        .HasMaxLength(256)
-                        .HasColumnType("varchar(256)");
+                        .HasMaxLength(191)
+                        .HasColumnType("varchar(191)");
 
                     b.Property<string>("NormalizedName")
-                        .HasMaxLength(256)
-                        .HasColumnType("varchar(256)");
+                        .HasMaxLength(191)
+                        .HasColumnType("varchar(191)");
 
                     b.HasKey("Id");
 
@@ -60,19 +60,14 @@ namespace login.Migrations
                     b.Property<string>("Addres2")
                         .IsRequired()
                         .HasColumnType("longtext");
-                        
-                    b.Property<string>("StName")
-                        .HasMaxLength(123)
-                        .HasColumnType("varchar(123)");
-
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Email")
-                        .HasMaxLength(256)
-                        .HasColumnType("varchar(256)");
+                        .HasMaxLength(191)
+                        .HasColumnType("varchar(191)");
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("tinyint(1)");
@@ -81,15 +76,19 @@ namespace login.Migrations
                         .HasColumnType("tinyint(1)");
 
                     b.Property<DateTimeOffset?>("LockoutEnd")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime");
 
                     b.Property<string>("NormalizedEmail")
-                        .HasMaxLength(256)
-                        .HasColumnType("varchar(256)");
+                        .HasMaxLength(191)
+                        .HasColumnType("varchar(191)");
+
+                    b.Property<string>("NormalizedName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.Property<string>("NormalizedUserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("varchar(256)");
+                        .HasMaxLength(191)
+                        .HasColumnType("varchar(191)");
 
                     b.Property<string>("PasswordHash")
                         .HasColumnType("longtext");
@@ -103,12 +102,16 @@ namespace login.Migrations
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("longtext");
 
+                    b.Property<string>("StName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("tinyint(1)");
 
                     b.Property<string>("UserName")
-                        .HasMaxLength(256)
-                        .HasColumnType("varchar(256)");
+                        .HasMaxLength(191)
+                        .HasColumnType("varchar(191)");
 
                     b.HasKey("Id");
 
@@ -169,10 +172,10 @@ namespace login.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<int>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("varchar(95)");
 
                     b.Property<string>("ProviderKey")
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("varchar(95)");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("longtext");
@@ -208,10 +211,10 @@ namespace login.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("varchar(95)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("varchar(95)");
 
                     b.Property<string>("Value")
                         .HasColumnType("longtext");

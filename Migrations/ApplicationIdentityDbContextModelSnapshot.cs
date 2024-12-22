@@ -35,7 +35,7 @@ namespace login.Migrations
 
                     b.Property<string>("NormalizedName")
                         .HasMaxLength(256)
-                        .HasColumnType("varchar(256)");
+                        .HasColumnType("varchar(191)");
 
                     b.HasKey("Id");
 
@@ -59,7 +59,6 @@ namespace login.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("longtext");
@@ -68,10 +67,6 @@ namespace login.Migrations
                         .HasMaxLength(256)
                         .HasColumnType("varchar(256)");
 
-                    b.Property<string>("StName")
-                        .HasMaxLength(123)
-                        .HasColumnType("varchar(123)");
-
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("tinyint(1)");
 
@@ -79,15 +74,19 @@ namespace login.Migrations
                         .HasColumnType("tinyint(1)");
 
                     b.Property<DateTimeOffset?>("LockoutEnd")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime");
 
                     b.Property<string>("NormalizedEmail")
                         .HasMaxLength(256)
                         .HasColumnType("varchar(256)");
 
+                    b.Property<string>("NormalizedName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
                     b.Property<string>("NormalizedUserName")
                         .HasMaxLength(256)
-                        .HasColumnType("varchar(256)");
+                        .HasColumnType("varchar(191)");
 
                     b.Property<string>("PasswordHash")
                         .HasColumnType("longtext");
@@ -99,6 +98,10 @@ namespace login.Migrations
                         .HasColumnType("tinyint(1)");
 
                     b.Property<string>("SecurityStamp")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("StName")
+                        .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<bool>("TwoFactorEnabled")
@@ -167,10 +170,10 @@ namespace login.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<int>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("varchar(95)");
 
                     b.Property<string>("ProviderKey")
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("varchar(95)");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("longtext");
@@ -206,10 +209,10 @@ namespace login.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("varchar(95)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("varchar(255)");
+                        .HasColumnType("varchar(95)");
 
                     b.Property<string>("Value")
                         .HasColumnType("longtext");

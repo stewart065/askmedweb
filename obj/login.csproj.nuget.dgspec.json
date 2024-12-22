@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\client stewart\\OneDrive\\Desktop\\login\\login.csproj": {}
+    "C:\\Users\\client stewart\\OneDrive\\Documents\\mao\\askmedweb\\login.csproj": {}
   },
   "projects": {
-    "C:\\Users\\client stewart\\OneDrive\\Desktop\\login\\login.csproj": {
+    "C:\\Users\\client stewart\\OneDrive\\Documents\\mao\\askmedweb\\login.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\client stewart\\OneDrive\\Desktop\\login\\login.csproj",
+        "projectUniqueName": "C:\\Users\\client stewart\\OneDrive\\Documents\\mao\\askmedweb\\login.csproj",
         "projectName": "login",
-        "projectPath": "C:\\Users\\client stewart\\OneDrive\\Desktop\\login\\login.csproj",
+        "projectPath": "C:\\Users\\client stewart\\OneDrive\\Documents\\mao\\askmedweb\\login.csproj",
         "packagesPath": "C:\\Users\\client stewart\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\client stewart\\OneDrive\\Desktop\\login\\obj\\",
+        "outputPath": "C:\\Users\\client stewart\\OneDrive\\Documents\\mao\\askmedweb\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\client stewart\\AppData\\Roaming\\NuGet\\NuGet.Config"

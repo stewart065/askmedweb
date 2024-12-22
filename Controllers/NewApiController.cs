@@ -33,7 +33,7 @@ namespace login.Controllers
         }
         public IActionResult inv(Invt i)
         {
-            var loguser = _sample.Aspnetusers.Where(x => x.UserName == User.Identity.Name).FirstOrDefault();
+            var loguser = _sample.AspNetUsers.Where(x => x.UserName == User.Identity.Name).FirstOrDefault();
 
             if (loguser == null)
             {
@@ -80,9 +80,9 @@ namespace login.Controllers
         public ActionResult<List<InventoryViewModel>> getinvts()
         {
             var invs = _context.Invts.ToList();
-            var usrs = _sample.Aspnetusers.ToList();
+            var usrs = _sample.AspNetUsers.ToList();
 
-            var loguser = _sample.Aspnetusers.Where(x => x.UserName == User.Identity.Name).FirstOrDefault();
+            var loguser = _sample.AspNetUsers.Where(x => x.UserName == User.Identity.Name).FirstOrDefault();
 
 
             var invtrs = (
@@ -111,7 +111,7 @@ namespace login.Controllers
         {
 
             var invs = _context.Invts.ToList();
-            var usrs = _sample.Aspnetusers.ToList();
+            var usrs = _sample.AspNetUsers.ToList();
 
             var invtrs = (
             from inv in invs
@@ -138,7 +138,7 @@ namespace login.Controllers
 
         public IActionResult updateinv(Invt wew)
         {
-            var loguser = _sample.Aspnetusers.Where(x => x.UserName == User.Identity.Name).FirstOrDefault();
+            var loguser = _sample.AspNetUsers.Where(x => x.UserName == User.Identity.Name).FirstOrDefault();
 
             wew.Userid = loguser.Id;
             _context.Invts.Update(wew);
@@ -150,7 +150,7 @@ namespace login.Controllers
         //     {
         //         try
         //         {
-        //             var loguser = _sample.Aspnetusers.FirstOrDefault(x => x.UserName == User.Identity.Name);
+        //             var loguser = _sample.AspNetUsers.FirstOrDefault(x => x.UserName == User.Identity.Name);
 
         //             if (loguser != null)
         //             {
@@ -182,7 +182,7 @@ namespace login.Controllers
         {
             try
             {
-                var loguser = _sample.Aspnetusers.FirstOrDefault(x => x.UserName == User.Identity.Name);
+                var loguser = _sample.AspNetUsers.FirstOrDefault(x => x.UserName == User.Identity.Name);
 
                 if (loguser != null)
                 {

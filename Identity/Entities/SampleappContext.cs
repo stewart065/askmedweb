@@ -16,20 +16,20 @@ namespace login.Entities
         {
         }
 
-        public virtual DbSet<Aspnetrole> Aspnetroles { get; set; } = null!;
-        public virtual DbSet<Aspnetroleclaim> Aspnetroleclaims { get; set; } = null!;
-        public virtual DbSet<Aspnetuser> Aspnetusers { get; set; } = null!;
-        public virtual DbSet<Aspnetuserclaim> Aspnetuserclaims { get; set; } = null!;
-        public virtual DbSet<Aspnetuserlogin> Aspnetuserlogins { get; set; } = null!;
-        public virtual DbSet<Aspnetusertoken> Aspnetusertokens { get; set; } = null!;
-        public virtual DbSet<Efmigrationshistory> Efmigrationshistories { get; set; } = null!;
+        public virtual DbSet<AspNetRole> AspNetRoles { get; set; } = null!;
+        public virtual DbSet<AspNetRoleClaim> AspNetRoleClaims { get; set; } = null!;
+        public virtual DbSet<AspNetUser> AspNetUsers { get; set; } = null!;
+        public virtual DbSet<AspNetUserClaim> AspNetUserClaims { get; set; } = null!;
+        public virtual DbSet<AspNetUserLogin> AspNetUserLogins { get; set; } = null!;
+        public virtual DbSet<AspNetUserToken> AspNetUserTokens { get; set; } = null!;
+        public virtual DbSet<EfmigrationsHistory> EfmigrationsHistories { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseMySql("server=localhost;database=sampleapp;user=root", Microsoft.EntityFrameworkCore.ServerVersion.Parse("10.4.32-mariadb"));
+                optionsBuilder.UseMySql("server=sql12.freesqldatabase.com;database=sql12749728;user=sql12749728;pwd=xaqCDkV8a4", Microsoft.EntityFrameworkCore.ServerVersion.Parse("5.5.62-mysql"));
             }
         }
 
@@ -38,24 +38,20 @@ namespace login.Entities
             modelBuilder.UseCollation("utf8mb4_general_ci")
                 .HasCharSet("utf8mb4");
 
-            modelBuilder.Entity<Aspnetrole>(entity =>
+            modelBuilder.Entity<AspNetRole>(entity =>
             {
-                entity.ToTable("aspnetroles");
-
                 entity.HasIndex(e => e.NormalizedName, "RoleNameIndex")
                     .IsUnique();
 
                 entity.Property(e => e.Id).HasColumnType("int(11)");
 
-                entity.Property(e => e.Name).HasMaxLength(256);
+                entity.Property(e => e.Name).HasMaxLength(191);
 
-                entity.Property(e => e.NormalizedName).HasMaxLength(256);
+                entity.Property(e => e.NormalizedName).HasMaxLength(191);
             });
 
-            modelBuilder.Entity<Aspnetroleclaim>(entity =>
+            modelBuilder.Entity<AspNetRoleClaim>(entity =>
             {
-                entity.ToTable("aspnetroleclaims");
-
                 entity.HasIndex(e => e.RoleId, "IX_AspNetRoleClaims_RoleId");
 
                 entity.Property(e => e.Id).HasColumnType("int(11)");
@@ -63,15 +59,12 @@ namespace login.Entities
                 entity.Property(e => e.RoleId).HasColumnType("int(11)");
 
                 entity.HasOne(d => d.Role)
-                    .WithMany(p => p.Aspnetroleclaims)
-                    .HasForeignKey(d => d.RoleId)
-                    .HasConstraintName("FK_AspNetRoleClaims_AspNetRoles_RoleId");
+                    .WithMany(p => p.AspNetRoleClaims)
+                    .HasForeignKey(d => d.RoleId);
             });
 
-            modelBuilder.Entity<Aspnetuser>(entity =>
+            modelBuilder.Entity<AspNetUser>(entity =>
             {
-                entity.ToTable("aspnetusers");
-
                 entity.HasIndex(e => e.NormalizedEmail, "EmailIndex");
 
                 entity.HasIndex(e => e.NormalizedUserName, "UserNameIndex")
@@ -81,33 +74,25 @@ namespace login.Entities
 
                 entity.Property(e => e.AccessFailedCount).HasColumnType("int(11)");
 
-                entity.Property(e => e.Addres2).HasMaxLength(123);
+                entity.Property(e => e.Email).HasMaxLength(191);
 
-                entity.Property(e => e.Email).HasMaxLength(256);
+                entity.Property(e => e.NormalizedEmail).HasMaxLength(191);
 
-                entity.Property(e => e.LockoutEnd).HasMaxLength(6);
+                entity.Property(e => e.NormalizedUserName).HasMaxLength(191);
 
-                entity.Property(e => e.NormalizedEmail).HasMaxLength(256);
-
-                entity.Property(e => e.NormalizedUserName).HasMaxLength(256);
-
-                entity.Property(e => e.StName)
-                    .HasMaxLength(123)
-                    .HasColumnName("stName");
-
-                entity.Property(e => e.UserName).HasMaxLength(256);
+                entity.Property(e => e.UserName).HasMaxLength(191);
 
                 entity.HasMany(d => d.Roles)
                     .WithMany(p => p.Users)
                     .UsingEntity<Dictionary<string, object>>(
-                        "Aspnetuserrole",
-                        l => l.HasOne<Aspnetrole>().WithMany().HasForeignKey("RoleId").HasConstraintName("FK_AspNetUserRoles_AspNetRoles_RoleId"),
-                        r => r.HasOne<Aspnetuser>().WithMany().HasForeignKey("UserId").HasConstraintName("FK_AspNetUserRoles_AspNetUsers_UserId"),
+                        "AspNetUserRole",
+                        l => l.HasOne<AspNetRole>().WithMany().HasForeignKey("RoleId"),
+                        r => r.HasOne<AspNetUser>().WithMany().HasForeignKey("UserId"),
                         j =>
                         {
                             j.HasKey("UserId", "RoleId").HasName("PRIMARY").HasAnnotation("MySql:IndexPrefixLength", new[] { 0, 0 });
 
-                            j.ToTable("aspnetuserroles");
+                            j.ToTable("AspNetUserRoles");
 
                             j.HasIndex(new[] { "RoleId" }, "IX_AspNetUserRoles_RoleId");
 
@@ -117,10 +102,8 @@ namespace login.Entities
                         });
             });
 
-            modelBuilder.Entity<Aspnetuserclaim>(entity =>
+            modelBuilder.Entity<AspNetUserClaim>(entity =>
             {
-                entity.ToTable("aspnetuserclaims");
-
                 entity.HasIndex(e => e.UserId, "IX_AspNetUserClaims_UserId");
 
                 entity.Property(e => e.Id).HasColumnType("int(11)");
@@ -128,51 +111,44 @@ namespace login.Entities
                 entity.Property(e => e.UserId).HasColumnType("int(11)");
 
                 entity.HasOne(d => d.User)
-                    .WithMany(p => p.Aspnetuserclaims)
-                    .HasForeignKey(d => d.UserId)
-                    .HasConstraintName("FK_AspNetUserClaims_AspNetUsers_UserId");
+                    .WithMany(p => p.AspNetUserClaims)
+                    .HasForeignKey(d => d.UserId);
             });
 
-            modelBuilder.Entity<Aspnetuserlogin>(entity =>
+            modelBuilder.Entity<AspNetUserLogin>(entity =>
             {
                 entity.HasKey(e => new { e.LoginProvider, e.ProviderKey })
                     .HasName("PRIMARY")
                     .HasAnnotation("MySql:IndexPrefixLength", new[] { 0, 0 });
-
-                entity.ToTable("aspnetuserlogins");
 
                 entity.HasIndex(e => e.UserId, "IX_AspNetUserLogins_UserId");
 
                 entity.Property(e => e.UserId).HasColumnType("int(11)");
 
                 entity.HasOne(d => d.User)
-                    .WithMany(p => p.Aspnetuserlogins)
-                    .HasForeignKey(d => d.UserId)
-                    .HasConstraintName("FK_AspNetUserLogins_AspNetUsers_UserId");
+                    .WithMany(p => p.AspNetUserLogins)
+                    .HasForeignKey(d => d.UserId);
             });
 
-            modelBuilder.Entity<Aspnetusertoken>(entity =>
+            modelBuilder.Entity<AspNetUserToken>(entity =>
             {
                 entity.HasKey(e => new { e.UserId, e.LoginProvider, e.Name })
                     .HasName("PRIMARY")
                     .HasAnnotation("MySql:IndexPrefixLength", new[] { 0, 0, 0 });
 
-                entity.ToTable("aspnetusertokens");
-
                 entity.Property(e => e.UserId).HasColumnType("int(11)");
 
                 entity.HasOne(d => d.User)
-                    .WithMany(p => p.Aspnetusertokens)
-                    .HasForeignKey(d => d.UserId)
-                    .HasConstraintName("FK_AspNetUserTokens_AspNetUsers_UserId");
+                    .WithMany(p => p.AspNetUserTokens)
+                    .HasForeignKey(d => d.UserId);
             });
 
-            modelBuilder.Entity<Efmigrationshistory>(entity =>
+            modelBuilder.Entity<EfmigrationsHistory>(entity =>
             {
                 entity.HasKey(e => e.MigrationId)
                     .HasName("PRIMARY");
 
-                entity.ToTable("__efmigrationshistory");
+                entity.ToTable("__EFMigrationsHistory");
 
                 entity.Property(e => e.MigrationId).HasMaxLength(150);
 
